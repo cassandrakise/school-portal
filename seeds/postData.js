@@ -18,3 +18,7 @@
     "urgent": "Yes"
 }
 ]
+
+const seedPosts = () => User.bulkCreate(postData);
+
+module.exports = seedPosts;

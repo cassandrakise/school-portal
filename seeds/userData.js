@@ -15,4 +15,6 @@
       "password": "armon85school"
     }
 ]
-  
+const seedUsers = () => User.bulkCreate(userData);
+
+module.exports = seedUsers;
