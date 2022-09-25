@@ -1,6 +1,8 @@
 const path = require('path');
+// Dependencies
 const express = require('express');
 const session = require('express-session');
+// Import express-handle-bars
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
@@ -9,8 +11,9 @@ const sequelize = require('./config/connection');
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+// set up Express App
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3111;
 
 const hbs = exphbs.create({ helpers });
 
@@ -25,7 +28,7 @@ const sess = {
 };
 
 app.use(session(sess));
-
+// sets up handebars.js as the default template engine
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
