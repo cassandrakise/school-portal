@@ -1,6 +1,7 @@
 const sequelize = require('sequelize');
-const connection = require('..config/connection');
-const comment = require('./user');
+const connection = require('../config/connection');
+// const comment = require('./comment');
+var DataTypes = require('sequelize/lib/data-types');
 
 const comment = connection.define('comment',{
 
@@ -14,27 +15,26 @@ const comment = connection.define('comment',{
         type: DataTypes.STRING,
         allowNull: false,
       },
-      
       content: {
         type: DataTypes.TEXT,
         allowNull: false
-              },
-    user_id: {
-        type:DataTypes.INTEGER,
+      },
+      user_id: {
+        type: DataTypes.INTEGER,
         allowNull:false,
         reference:{
            model:'user',
            key:'id'
         },
         post_id: {
-          type:DataTypes.INTEGER,
+          type: DataTypes.INTEGER,
           allowNull:false,
           reference:{
              model:'post',
              key:'id'
           }
+          }
       }
-    }
     },
       {
         sequelize,
