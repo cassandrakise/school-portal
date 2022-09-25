@@ -1,6 +1,7 @@
 const sequelize = require('sequelize');
-const connection = require('..config/connection');
-const comment = require('./user');
+const connection = require('../config/connection');
+// const comment = require('./comment');
+var DataTypes = require('sequelize/lib/data-types');
 
 const comment = connection.define('comment',{
 
