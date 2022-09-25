@@ -1,8 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const connection = require('../config/connection');
 
+class Post extends Model {}
 
-const post = connection.define('post', {
+const Post = connection.define('post', {
 
     id: {
         type: DataTypes.INTEGER,
@@ -18,10 +19,9 @@ const post = connection.define('post', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-
     content: {
         type: DataTypes.TEXT,
-        allowNull: false
+        // allowNull: false
     },
     user_id: {
         type: DataTypes.INTEGER,
@@ -42,4 +42,4 @@ const post = connection.define('post', {
     })
 
 
-module.exports = post;
+module.exports = Post;

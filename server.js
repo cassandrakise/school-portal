@@ -13,17 +13,20 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // set up Express App
 const app = express();
-const PORT = process.env.PORT || 3111;
+const PORT = process.env.PORT || 3999;
 
 const hbs = exphbs.create({ helpers });
 
+// cookies stored in SequelizeStore, expires after 1 hour
 const sess = {
   secret: 'Super secret secret',
-  cookie: {},
+  cookie: {
+        maxAge: 3600000,
+  },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
-    db: sequelize
+    db: sequelize,
   })
 };
 

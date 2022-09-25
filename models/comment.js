@@ -1,11 +1,14 @@
-const sequelize = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
+// const bcrypt = require('bcrypt');
 const connection = require('../config/connection');
-// const comment = require('./comment');
-var DataTypes = require('sequelize/lib/data-types');
 
-const comment = connection.define('comment',{
+// var DataTypes = require('sequelize/lib/data-types');
 
-    id: {
+class Comment extends Model {}
+
+const Comment = connection.define('comment',{
+
+      id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
@@ -17,7 +20,7 @@ const comment = connection.define('comment',{
       },
       content: {
         type: DataTypes.TEXT,
-        allowNull: false
+        // allowNull: false
       },
       user_id: {
         type: DataTypes.INTEGER,
@@ -26,18 +29,18 @@ const comment = connection.define('comment',{
            model:'user',
            key:'id'
         },
-        post_id: {
-          type: DataTypes.INTEGER,
-          allowNull:false,
-          reference:{
-             model:'post',
-             key:'id'
-          }
-          }
+      comment_id: {
+        type: DataTypes.INTEGER,
+        allowNull:false,
+        reference:{
+            model:'comment',
+            key:'id'
+        }
+        }
       }
     },
       {
-        sequelize,
+        sequelize: connection,
         timestamps: true,
         freezeTableName: true,
         underscored: true,
@@ -46,4 +49,4 @@ const comment = connection.define('comment',{
 })
 
 
-module.exports = comment;
+module.exports = Comment;

@@ -1,7 +1,13 @@
 {{#each users as |user| }}
 <div class="row align-center mb-5">
     <div>
-      <p>Hello</p>
+      <p>Hello, {{name}}</p>
     </div>
 </div>
+
+{{!-- Show recent messages, and by whom, in homepage --}}
+<h1>Recent Messages</h1>
+<p>{{message}}</p>
+<p>posted by {{user.name}} on {{format_date date_created}}</p>
+
 {{/each}}

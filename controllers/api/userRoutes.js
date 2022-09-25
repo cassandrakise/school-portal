@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-// CREATE new user
+// CREATE new user, and log them in
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create({
@@ -12,7 +12,6 @@ router.post('/', async (req, res) => {
 
     req.session.save(() => {
       req.session.logged_in = true;
-
       res.status(200).json(userData);
     });
   } catch (err) {
