@@ -1,0 +1,17 @@
+{{!-- #each helper, use "this" to reference the element being iterated over --}}
+
+<div class="comments-card">
+    {{#each this}}
+    <section class="comment">
+        <div class="meta">
+            <h2>{{comment_id}}</h2>
+            <p> Posted by: {{comment.username}} on {{date_created}} </p>
+        </div>
+        <div class="text">
+            {{comment_text}}
+        </div>
+    </section>
+    {{/each}}
+</div>
+
+

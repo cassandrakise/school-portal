@@ -3,7 +3,7 @@ const Post = require('./post');
 const Comment = require('./comment');
 
 
-User.hasMany(post, {
+User.hasMany(Post, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'
 
@@ -27,7 +27,7 @@ Comment.belongsTo(User, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'
 })
-Comment.belongsTo(post, {
+Comment.belongsTo(Post, {
     foreignKey: 'post_id',
     onDelete: 'CASCADE'
 })

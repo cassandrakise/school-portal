@@ -7,7 +7,7 @@ const connection = require('../config/connection');
 class Comment extends Model {}
 
 const Comment = connection.define('comment',{
-
+// Comment.init({
       id: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -20,7 +20,7 @@ const Comment = connection.define('comment',{
       },
       content: {
         type: DataTypes.TEXT,
-        // allowNull: false
+        allowNull: false
       },
       user_id: {
         type: DataTypes.INTEGER,

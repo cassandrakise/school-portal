@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { comment, User } = require('../models');
+const { User, Post, Comment  } = require('../models');
 const withAuth = require('../utils/auth');
 
 // withAuth middleware, get all userdata, post, and comments, 
@@ -51,5 +51,6 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
+
 
 module.exports = router;

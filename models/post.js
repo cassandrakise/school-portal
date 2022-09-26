@@ -4,7 +4,7 @@ const connection = require('../config/connection');
 class Post extends Model {}
 
 const Post = connection.define('post', {
-
+// Post.init({
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -29,6 +29,14 @@ const Post = connection.define('post', {
         reference: {
             model: 'user',
             key: 'id'
+        }
+    },
+    post_id: {
+        type: DataTypes.INTEGER,
+        allowNull:false,
+        reference:{
+            model:'post',
+            key:'id'
         }
     }
 },
