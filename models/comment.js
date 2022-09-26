@@ -6,8 +6,8 @@ const connection = require('../config/connection');
 
 class Comment extends Model {}
 
-const Comment = connection.define('comment',{
-// Comment.init({
+// const Comment = connection.define('comment',{
+Comment.init({
       id: {
         type: DataTypes.INTEGER,
         allowNull: false,

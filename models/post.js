@@ -3,8 +3,8 @@ const connection = require('../config/connection');
 
 class Post extends Model {}
 
-const Post = connection.define('post', {
-// Post.init({
+// const Post = connection.define('post', {
+Post.init({
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
