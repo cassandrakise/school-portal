@@ -19,7 +19,7 @@ const Post = connection.define('post', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    content: {
+    post_text: {
         type: DataTypes.TEXT,
         // allowNull: false
     },

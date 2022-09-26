@@ -18,7 +18,7 @@ const Comment = connection.define('comment',{
         type: DataTypes.STRING,
         allowNull: false,
       },
-      content: {
+      comment_text: {
         type: DataTypes.TEXT,
         allowNull: false
       },

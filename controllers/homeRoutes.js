@@ -22,20 +22,31 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
-/// GET Comment 
-router.get('/comment', withAuth, async (req, res) => {
+/// GET Post 
+// **** check attributes (created_at)
+router.get('/post', async (req, res) => {
   try {
-    // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      // include: [{ model: Project }],
+    const postData = await Post.findAll({
+      include: [{
+        model: Comment,
+        attributes: ['id', 'username', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        include: {
+            model: User,
+            attributes: ['username']
+        }
+    },
+    {
+        model: User,
+        attributes: ['username']
+    }
+]
     });
 
-    const user = userData.get({ plain: true });
+    const posts = postData.map((post) => post.get({ plain: true }));
 
-    res.render('profile', {
-      ...user,
-      logged_in: true
+    res.render('homepage', {
+      ...posts,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
