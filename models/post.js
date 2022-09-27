@@ -15,10 +15,6 @@ Post.init({
         type: DataTypes.STRING,
         allowNull: false,
     },
-    username: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
     post_text: {
         type: DataTypes.TEXT,
         // allowNull: false
@@ -31,14 +27,6 @@ Post.init({
             key: 'id'
         }
     },
-    post_id: {
-        type: DataTypes.INTEGER,
-        allowNull:false,
-        reference:{
-            model:'post',
-            key:'id'
-        }
-    }
 },
     {
         sequelize: connection,
