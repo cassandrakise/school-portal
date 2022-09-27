@@ -1,10 +1,34 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+// CREATE new user, and log them in
+router.post('/', async (req, res) => {
+  try {
+    const userData = await User.create({
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password,
+    });
+
+    req.session.save(() => {
+      req.session.logged_in = true;
+      res.status(200).json(userData);
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+//Login
 router.post('/login', async (req, res) => {
   try {
     // Find the user who matches the posted e-mail address
-    const userData = await User.findOne({ where: { email: req.body.email } });
+    const userData = await User.findOne({ 
+      where: { 
+        email: req.body.email 
+      } 
+    });
 
     if (!userData) {
       res
@@ -34,6 +58,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
+//Logout
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
