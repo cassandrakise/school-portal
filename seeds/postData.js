@@ -1,22 +1,19 @@
 const {Post} = require('../models');
 const postData = [
 {
-    "name": "Juan",
-    "post": "Parent Teacher conferences",
-    "description": "Hi, when will information be sent out to parents regarding the data of fall parent and teacher conferences??",
-    "urgent": "No"
+    title: "Parent Teacher conferences",
+    post_text: "Hi, when will information be sent out to parents regarding the data of fall parent and teacher conferences??",
+    user_id: 3
 },
 {
-    "name": "Howard",
-    "post": "Spring Textbooks",
-    "description": "Hello faculty! For the spring semester, will textbooks be provided for Algebra I or will we need to buy/rent Lori a copy?",
-    "urgent": "No"
+    title: "Spring Textbooks",
+    post_text: "Hello faculty! For the spring semester, will textbooks be provided for Algebra I or will we need to buy/rent Lori a copy?",
+    user_id: 1
 },
 {
-    "name": "Ziyan",
-    "post": "Cyberbullying",
-    "description": "I recently found out my child is experiencing some cyberbullying. Can someone please call me or provide me with a direct line to the school therapist? Thanks!!!!",
-    "urgent": "Yes"
+    title: "Cyberbullying",
+    post_text: "I recently found out my child is experiencing some cyberbullying. Can someone please call me or provide me with a direct line to the school therapist? Thanks!!!!",
+    user_id: 2
 }
 ]
 
