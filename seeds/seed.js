@@ -1,24 +1,18 @@
-const sequelize = require('../config/connection'); 
-const { User, Post } = require('../models'); 
+const postData = require('./postData');
+const userData = require('./userData');
 
-const userData = require('./userData.json');
-const postData = require('./postData.json'); 
+const sequelize = require('../config/connection'); 
 
 const seedDatabase = async () => { 
   await sequelize.sync({ force: true }); 
+    console.log('\n----- DATABASE SYNCED -----\n');
 
-  const users = await User.bulkCreate(userData, {
-    individualHooks: true, 
-    returning: true, 
-  });
+  await userData();
+    console.log('\n----- USER SEEDED -----\n');
 
-  // section below is what Cassie wants review on -- unsure if this is the best way to do this
-  for (const post of postData) {
-    await Post.create({
-      ...post,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
-    });
-  }
+  await postData();
+    console.log('\n----- POST SEEDED -----\n');
+  
 
   process.exit(0); 
 };
