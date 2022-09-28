@@ -1,11 +1,6 @@
-{{#each users as |user| }}
-<div class="row align-center mb-5">
-    <div>
-      <p>Hello, {{name}}</p>
-    </div>
+<div>
+    <h2>Hello {{user.username}}</h2>
 </div>
-
-{{!-- Show Posts (listed), and calendar? --}}
 <div>
   <head>
 <script>
@@ -80,7 +75,16 @@
 
 </body>
 </div>
+<br>
+<h2>
+    Comments
+</h2>
+<article class="post">
 
-{{/each}}
+    {{#each posts as |post| }}
+        {{> post-info post}}
+    {{/each}}
 
-<script src="./js/main.js"></script>
+</article>
+
+<script src="/js/main.js"></script>
