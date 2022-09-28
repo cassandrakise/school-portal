@@ -1,2 +1,3 @@
-DROP DATABASE IF EXISTS school_portal_db;
-CREATE DATABASE school_portal_db;
+DROP DATABASE IF EXISTS tech_blog;
+
+CREATE DATABASE tech_blog;
