@@ -1,3 +1,5 @@
-{{#each post as |post| }}
+{{#each posts as |post| }}
 
+<h1>{{post.title}} <span style="font-size:16px ;">by {{post.user.name}}</span></h1>
+<p>{{post.post_text}}</p>
 {{/each}}
