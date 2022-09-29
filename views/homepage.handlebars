@@ -16,15 +16,15 @@
         right: 'dayGridMonth,listYear'
       },
 
-      displayEventTime: false, // don't show the time column in list view
+      displayEventTime: false, 
 
-      // THIS KEY WON'T WORK IN PRODUCTION!!!
-      // To make your own Google API key, follow the directions here:
-      // http://fullcalendar.io/docs/google_calendar/
-      googleCalendarApiKey: 'AIzaSyDcnW6WejpTOCffshGDDb4neIrXVUA1EAE',
+      //Google Calendar API
+      googleCalendarApiKey: 'AIzaSyAN_7IYocEyiA9CC3PkdeUDuQ9Vno_p1hc',
 
-      // US Holidays
-      events: 'en.usa#holiday@group.v.calendar.google.com',
+      //Calendar ID. Will pull specific events from this calendar
+      events: 'schoolportal771@gmail.com',
+        
+    
 
       eventClick: function(arg) {
         // opens events in a popup window
@@ -86,6 +86,5 @@
     {{/each}}
 
 </article>
-
 
 <script src="/js/main.js"></script>
