@@ -16,10 +16,20 @@ async function newFormHandler(event) {
     });
 
     if (response.ok) {
-        document.location.replace('/dashboard');
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Your work has been saved',
+            showConfirmButton: false,
+            timer: 1500
+        })
+        .then(function() {
+            document.location.replace('/dashboard');
+        })    
     } else {
         alert(response.statusText);
     }
 };
+
 
 document.querySelector('#new-post-form').addEventListener('submit', newFormHandler);
