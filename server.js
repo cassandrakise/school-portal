@@ -9,13 +9,13 @@ const hbs = exphbs.create({
 });
 const session = require('express-session');
 const app = express();
-const PORT = process.env.PORT || 3999;
+const PORT = process.env.PORT || 3222;
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
     secret: 'Super secret secret',
     cookie: {
-        maxAge: 36000
+        maxAge: 86400000
     },
     resave: false,
     saveUninitialized: true,
