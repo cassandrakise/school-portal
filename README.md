@@ -25,22 +25,55 @@ This is a collaborative work to provide an interactive experience. This applicat
 ## Accessing the Application
 Too access the application, you can follow the deployment link in Heroku below.
 
-Heroku Link: [Class Link]()
+Heroku Link: [Class Link](https://ucb-school-portal.herokuapp.com/login)
 
 # Application Functionality
 * User will be able to sign up for an account.
+<img src="./assets/school_signup.gif">
+
 * If user is already signed up, user will be able to log in using the credentials during sign up process.
+<img src="./assets/school_login.gif">
+
 * Once logged in, user will be presented with the calendar and all the current posts.
+<img src="./assets/school_home.png">
+
 * User will be able to read all the comments under each posts.
+<img src="./assets/school_readcomments.gif">
+
 * User will be able to add a comment in any post.
+<img src="./assets/school_addcomment.gif">
+
 * All previous posts of user can be viewed under `Comments`.
+<img src="./assets/school_viewpost.png">
+
 * User will be able to create a new post.
-* User will be able to safely log out.
+<img src="./assets/school_createpost.gif">
+
+* User will be able to edit post.
+<img src="./assets/school_editpost.gif">
+
+* User will be able to delete post.
+<img src="./assets/school_deletepost.gif">
+
+* User will be able to log out safely.
+<img src="./assets/school_logout.gif">
+
+## Technologies Used
+* Node
+* Express
+* MySQL
+* Sequelize
+* API (Google API and random quote generator)
+* Handlebars
+* SweetAlert2
+* Bcrypt
+* Bootstrap
+
 
 # Contributors
 * [Scott Wattenbarger](https://github.com/scottwatt)
 * [Shawn Chang](https://github.com/shawnchangs)
 * [Dennis Mateo](https://github.com/itsDenMat)
 * [Cassandra Kise](https://github.com/cassandrakise)
-* [Thomas]()
+* [Thomas](https://github.com/FormulaXYZ)
 
