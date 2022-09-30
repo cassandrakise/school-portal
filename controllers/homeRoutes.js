@@ -30,12 +30,15 @@ router.get('/', withAuth, (req, res) => {
             ]
         })
         .then(dbPostData => {
+            console.log('this should be the current user', req.session.username);
             const posts = dbPostData.map(post => post.get({
                 plain: true
             }));
             res.render('homepage', {
                 posts,
-                loggedIn: req.session.loggedIn
+                currentUser: req.session.username,
+                loggedIn: req.session.loggedIn,
+                
             });
         })
         .catch(err => {
