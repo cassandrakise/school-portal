@@ -75,5 +75,5 @@ Heroku Link: [Class Link](https://ucb-school-portal.herokuapp.com/login)
 * [Shawn Chang](https://github.com/shawnchangs)
 * [Dennis Mateo](https://github.com/itsDenMat)
 * [Cassandra Kise](https://github.com/cassandrakise)
-* [Thomas](https://github.com/FormulaXYZ)
+* [Thomas Woldetsadik](https://github.com/FormulaXYZ)
 
